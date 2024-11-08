@@ -14,13 +14,13 @@ function PokedexTable({pokemonArray, pokemonType}: PokedexTableProps){
   console.log('pokemonArray at PokedexTable is', pokemonArray, 'and pokemonType is', pokemonType)
 
   function generateUrl(pokemonArray: string[]): string {
-    const baseUrl = "http://localhost:3000/api/pokemons";
+    const baseUrl = "/api/pokemons";
     const queryParams = pokemonArray.map((name, index) => `name[${index}]=${encodeURIComponent(name)}`).join("&");
     return `${baseUrl}?${queryParams}`;
   }
 
   const getTypeData = async (pokemonType: string): Promise<Pokemon[]> => {
-    const url = "http://localhost:3000/api/pokemonstype?type=" + pokemonType
+    const url = "/api/pokemonstype?type=" + pokemonType
     console.log('url generated is', url)
     const response = await fetch(
       url,
