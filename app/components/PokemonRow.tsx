@@ -9,7 +9,7 @@ type PokemonProps = {
 // renders a row with the name, id, type and sprite image
 export default function PokemonRow({pokemonName}: PokemonProps){
   const getData = async (pokemonName: string) => {
-    const url = '/api/pokemon?name=' + pokemonName
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/pokemon?name=` + pokemonName
     const response = await fetch(
       url,
     )
