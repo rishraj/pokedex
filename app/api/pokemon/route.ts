@@ -4,8 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 const prisma = new PrismaClient()
 
 export async function GET(request: NextRequest) {
+  const url = new URL(request.url);
+  console.log('url which reached API is', url)
   try{
-    const url = new URL(request.url);
+    
     console.log('url is', url)
     const searchParams = new URLSearchParams(url.searchParams);
     console.log('searchParams is', searchParams)
