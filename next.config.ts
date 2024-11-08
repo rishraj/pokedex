@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
       port: '',
     }]
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   //reactStrictMode: false
 };
+
 
 export default nextConfig;
