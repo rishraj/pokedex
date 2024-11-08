@@ -23,6 +23,8 @@ export default function PokemonRow({pokemonName}: PokemonProps){
     queryFn: () => (getData(pokemonName)),
     });
   
+  console.log('Data fetching was successful. Data is', pokemon)
+
   if (isPending) {
     return <div>'Loading...'</div>;
   }
