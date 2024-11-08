@@ -6,12 +6,15 @@ const prisma = new PrismaClient()
 export async function GET(request: NextRequest) {
   try{
     const url = new URL(request.url);
+    console.log('url is', url)
     const searchParams = new URLSearchParams(url.searchParams);
+    console.log('searchParams is', searchParams)
     const pokemon = await prisma.pokemon.findUnique({
       where: {
         name: searchParams.get('name')!,
       },
     })
+    console.log('data after prisma query is', pokemon)
     return NextResponse.json(
       pokemon,
       { status: 200}
