@@ -33,7 +33,7 @@ export default function SelectPokemon() {
       />
       <Button
         variant="contained"
-        sx={{ mt: 3, mb: 3, width: 100,}}
+        sx={{ mt: 3, mb: 1, width: 100,}}
         onClick={handleSubmit}
       >
         Submit

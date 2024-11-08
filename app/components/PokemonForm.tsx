@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Autocomplete from '@mui/material/Autocomplete';
 import SelectPokemon from './SelectPokemon';
 import SelectPokemons from './SelectPokemons';
+import FilterablePokedexTable from './FilterablePokedexTable';
 
 
 export default function PokemonForm(){
@@ -28,6 +29,7 @@ export default function PokemonForm(){
 
           <SelectPokemon />
           <SelectPokemons />
+          <FilterablePokedexTable />
 
         </Box>
       </Box>

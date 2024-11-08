@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useQuery } from "@tanstack/react-query";
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 
-interface PokemonProps {
+type PokemonProps = {
   pokemonName: string;
 }
 

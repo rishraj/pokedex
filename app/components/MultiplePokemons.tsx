@@ -10,7 +10,7 @@ interface MultiplePokemonProps {
 function MultiplePokemons({pokemonNames}: MultiplePokemonProps){
   if (pokemonNames.length !== 0) {
     console.log('buttonClickData at multiple pokemons(value of state of buttonclick data?)', pokemonNames)
-    return <PokedexTable pokemonArray={pokemonNames as string[]}/>
+    return <PokedexTable pokemonArray={pokemonNames as string[]} pokemonType={'all'}/>
   }
   else {
     return <div>No pokemon selected.</div>

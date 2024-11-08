@@ -7,26 +7,20 @@ export async function GET(request: NextRequest) {
   try{
     const url = new URL(request.url);
     const searchParams = new URLSearchParams(url.searchParams);
-    console.log('searchParams is', searchParams)
-  
-    const names = []
-    for (let [_, value] of searchParams.entries()){
-      names.push(value!)
-    }
-
-    const response = await prisma.pokemon.findMany({
+    const pokemons = await prisma.pokemon.findMany({
       where: {
-          name: { in: names },
-      }
+        type: {
+          equals: searchParams.get('type')!,
+        },
+      },
     })
-
     return NextResponse.json(
-      response,
+      pokemons,
       { status: 200}
     );
   }catch(error){
     return NextResponse.json(
-      { message: 'Could not get Pokemons' },
+      { message: 'Could not get Pokemon Type' },
       { status: 500}
     );
   }
