@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   console.log('url which reached API is', url)
-  try{
+  //try{
     
     console.log('url is', url)
     const searchParams = new URLSearchParams(url.searchParams);
@@ -21,10 +21,10 @@ export async function GET(request: NextRequest) {
       pokemon,
       { status: 200}
     );
-  }catch(error){
+  /* }catch(error){
     return NextResponse.json(
       { message: 'Could not get Pokemon' },
       { status: 500}
     );
-  }
+  } */
 }
