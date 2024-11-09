@@ -10,9 +10,14 @@ const queryClient = new QueryClient()
 
 
 export default async function Home() {
-  return (
-    <>
-      <PokemonForm />
-    </>
-  );
+  if (process.env.NEXT_PUBLIC_BASE_URL) {
+    return (
+      <>
+        <PokemonForm />
+      </>
+    );
+  }
+  else{
+    return <p>Base URL is empty</p>
+  }
 }
